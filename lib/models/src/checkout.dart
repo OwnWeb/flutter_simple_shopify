@@ -196,6 +196,7 @@ class ProductVariantCheckout {
   final String sku;
   final bool requiresShipping;
   final String id;
+  final String productTitle;
 
   const ProductVariantCheckout(
       {this.price,
@@ -207,7 +208,8 @@ class ProductVariantCheckout {
         this.availableForSale,
         this.sku,
         this.requiresShipping,
-        this.id});
+        this.id,
+        this.productTitle});
 
   static ProductVariantCheckout fromJson(Map<String, dynamic> json) {
     return ProductVariantCheckout(
@@ -223,6 +225,7 @@ class ProductVariantCheckout {
       sku: json['sku'] ,
       requiresShipping: json['requiresShipping'],
       id: json['id'] ,
+      productTitle: (json['product'] ?? const {})['title']
     );
   }
 }
