@@ -49,6 +49,9 @@ customer(customerAccessToken: $accessToken) {
                   sku
                   requiresShipping
                   id
+                  product {
+                    title
+                  }
                 }
               }
             }
